@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<p>UI version:2018.10.12.0</p>
+<p id = "id_business_version"></p>
+
+<input type = "text" id = "id_a"/>
+<br>
+<input type = "text" id = "id_b"/>
+<br>
+<input type = "text" id = "id_c"/>
+<br>
+<button type = "button" onclick="solve()">Solve</button>
+
+<p id = "id_x1"></p>
+<p id = "id_x2"></p>
+
+<script src = "ec2.js">
+</script>
+
+</body>
+</html>
