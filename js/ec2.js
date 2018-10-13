@@ -1,10 +1,10 @@
-﻿document.getElementById("id_business_version").innerHTML = "Business version: 2018.10.12.1";
+﻿document.getElementById("id_business_version").innerHTML = "Business version: 2018.10.12.2";
 
 function solve()
 {
 	var a= document.getElementById("id_a").value;
-	var a= document.getElementById("id_b").value;
-	var a= document.getElementById("id_c").value;
+	var b= document.getElementById("id_b").value;
+	var c= document.getElementById("id_c").value;
 
 	var delta = b * b - 4 * a * c;
 	
