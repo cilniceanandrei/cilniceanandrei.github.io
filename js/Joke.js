@@ -122,13 +122,45 @@ function on_speak(){
 	document.getElementById("id_text").classList.remove('hidden');
     var enunt = new SpeechSynthesisUtterance();
     enunt.lang = "en-US";
-	r=Math.floor(Math.random()*3);
-	if(r==2){
-	enunt.text =" Yo momma is so fat that Dora can't even explore her!"
+	r=Math.floor((Math.random()*5)+1);
+	if(r===1){
+	enunt.text =" Yo momma is so fat that Dora can't even explore her!";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===2){
+	enunt.text =" You get ten times more girls than me? ten times zero is zero...";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===3){
+	enunt.text =" You are not as bad as people say, you are much, much worse.";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===4){
+	enunt.text =" Stop trying to be a smart ass, you're just an ass.";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===5){
+	enunt.text =" You, sir, are an oxygen thief!";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===6){
+	enunt.text =" Roses are red violets are blue, God made me pretty, what happened to you?";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===7){
+	enunt.text =" If laughter is the best medicine, your face must be curing the world.";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===8){
+	enunt.text =" You're so ugly, you scared the crap out of the toilet.";
+	document.getElementById("id_text").innerHTML =enunt.text;
+	}
+	else if(r===9){
+	enunt.text =" You should be proud of yourself.";
 	document.getElementById("id_text").innerHTML =enunt.text;
 	}
 	else{
-	enunt.text = "Your momma is so ugly she made One Direction go another direction.";
+	enunt.text = "You are awesome!";
 	document.getElementById("id_text").innerHTML =enunt.text;
 	}
 		
