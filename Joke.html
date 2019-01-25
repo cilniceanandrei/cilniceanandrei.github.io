@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<link href="css/joke.css" rel="stylesheet" type="text/css">
+    <title>Welcome</title>
 </head>
 <body>
-    <p>UI version: 2019.01.24.0</p>
-    <p id="id_logic_version"></p>
-
-    <video width="600" height="400" autoplay controls id="id_video"></video>
-    <button id="id_button">Take picture</button>
-   
-    <script src="js/joke.js"></script>
+	<div class="header">
+	<h2>Welcome to Roast Me!</h2>
+	</div>
+    <div class="container">
+	
+	<button id="On" class="buttonOn">Turn on</button>
+	<div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      </div>
+	  <div class="svid">
+    <video width="600" height="400" autoplay id="id_video"></video>
+	</div>
+    <div>
+	<button id="oprit" class="disabled" disabled>Turn off</button>
+	
+	<button id="grabFrame" class="disabled" disabled>Take Picture</button>
+	</div>
+     
+   <img class="img">
+    <canvas class="hidden"></canvas>
+	<div>
+	<button type="button" id="id_speak" class="disabled" disabled>Roast Me!</button>
+	</div>
+	<div>
+	<p id="id_text"></p>
+	</div>
+    
+    <script src="js/Joke.js"></script>
+	</div>
+	<footer>
+	<p class="version">UI version: 2019.01.24.2</p>
+	
+	</footer>
 </body>
 </html>
