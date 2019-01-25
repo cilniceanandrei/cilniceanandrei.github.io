@@ -1,9 +1,6 @@
-
 document.getElementById("On").addEventListener("click", on_get_cam);
 document.getElementById("oprit").addEventListener("click", opreste);
 document.getElementById("id_speak").addEventListener("click", on_speak);
-//document.getElementById("id_speak").addEventListener("click", on_speak);
-
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -11,17 +8,16 @@ var synth = window.speechSynthesis;
 var constraints;
 var imageCapture;
 var mediaStream;
-
 var grabFrameButton = document.querySelector('button#grabFrame');
-
 var canvas = document.querySelector('canvas');
 var img = document.querySelector('img');
 var video = document.querySelector('video');
 var videoSelect = document.querySelector('select#videoSource');
-
-
 grabFrameButton.onclick = grabFrame;
 videoSelect.onchange = getStream;
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function on_get_cam(){
 	document.getElementById("oprit").classList.remove('disabled');
 	document.getElementById("oprit").classList.add('buttonOff');
@@ -38,6 +34,9 @@ navigator.mediaDevices.enumerateDevices()
   })
   .then(getStream);
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   function gotDevices(deviceInfos) {
   for (var i = 0; i !== deviceInfos.length; ++i) {
     var deviceInfo = deviceInfos[i];
@@ -51,7 +50,8 @@ navigator.mediaDevices.enumerateDevices()
   }
 }
 
-// Get a video stream from the currently selected camera source.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function getStream() {
   if (mediaStream) {
     mediaStream.getTracks().forEach(track => {
@@ -69,8 +69,8 @@ function getStream() {
     });
 }
 
-// Display the stream from the currently selected camera source, and then
-// create an ImageCapture object, using the video from the stream.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function gotStream(stream) {
   console.log('getUserMedia() got stream: ', stream);
   mediaStream = stream;
@@ -80,7 +80,8 @@ function gotStream(stream) {
   getCapabilities();
 }
 
-// Get the PhotoCapabilities for the currently selected camera source.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function getCapabilities() {
   imageCapture.getPhotoCapabilities().then(function(capabilities) {
     console.log('Camera capabilities:', capabilities);
@@ -118,6 +119,7 @@ function getCapabilities() {
     // });
 // }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function on_speak(){
 	document.getElementById("id_text").classList.remove('hidden');
     var enunt = new SpeechSynthesisUtterance();
@@ -166,7 +168,9 @@ function on_speak(){
 		
     synth.speak(enunt);
 }
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 function opreste(videoElem) {
 	
 	canvas.classList.add('hidden');
@@ -195,6 +199,7 @@ function opreste(videoElem) {
 
 
 }
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function grabFrame(){
@@ -212,3 +217,4 @@ function grabFrame(){
   });
   
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
